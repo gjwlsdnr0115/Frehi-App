@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -14,59 +14,64 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Freshi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="냉장고 속" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmq-S3-p7r">
-                                <rect key="frame" x="20" y="104" width="97" height="31.333333333333343"/>
+                                <rect key="frame" x="20" y="104" width="121" height="31.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="재료" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7p-2N-LBu">
-                                <rect key="frame" x="20" y="137.33333333333334" width="45" height="31.333333333333343"/>
+                                <rect key="frame" x="20" y="137.5" width="45" height="31.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <color key="textColor" red="0.69019607843137254" green="0.57647058823529407" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="를 관리하세요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWe-T2-rnf">
-                                <rect key="frame" x="65" y="137.33333333333334" width="150" height="31.333333333333343"/>
+                                <rect key="frame" x="65" y="137.5" width="174" height="31.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uto-uR-hYV">
-                                <rect key="frame" x="340.66666666666669" y="105.33333333333333" width="29.333333333333314" height="28.666666666666671"/>
+                                <rect key="frame" x="364.5" y="105.5" width="29.5" height="28.5"/>
                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                 <state key="normal" image="gearshape" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                 </state>
                             </button>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="검색" translatesAutoresizingMaskIntoConstraints="NO" id="u42-9E-4XS">
-                                <rect key="frame" x="20" y="188.66666666666666" width="350" height="51"/>
+                                <rect key="frame" x="20" y="199" width="374" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8sh-DA-cae">
-                                <rect key="frame" x="40" y="249.66666666666666" width="310" height="30.666666666666657"/>
+                                <rect key="frame" x="40" y="260" width="334" height="30.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ig-ld-Khl">
-                                        <rect key="frame" x="0.0" y="0.0" width="77.666666666666671" height="30.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="30.5"/>
                                         <state key="normal" image="total_fill"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJb-zZ-4r1">
-                                        <rect key="frame" x="77.666666666666686" y="0.0" width="77.333333333333314" height="30.666666666666668"/>
+                                        <rect key="frame" x="83.5" y="0.0" width="83.5" height="30.5"/>
                                         <state key="normal" image="fridge"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-KX-5zB">
-                                        <rect key="frame" x="155" y="0.0" width="77.666666666666686" height="30.666666666666668"/>
+                                        <rect key="frame" x="167" y="0.0" width="83.5" height="30.5"/>
                                         <state key="normal" image="freezer"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJQ-HJ-34N">
-                                        <rect key="frame" x="232.66666666666671" y="0.0" width="77.333333333333343" height="30.666666666666668"/>
+                                        <rect key="frame" x="250.5" y="0.0" width="83.5" height="30.5"/>
                                         <state key="normal" image="other"/>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErB-1b-Wqe">
+                                <rect key="frame" x="254" y="342" width="68" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="add_food"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +91,7 @@
                             <constraint firstItem="Uto-uR-hYV" firstAttribute="centerY" secondItem="Nmq-S3-p7r" secondAttribute="centerY" id="hWY-t9-cWk"/>
                             <constraint firstItem="u42-9E-4XS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iDt-UR-EYz"/>
                             <constraint firstItem="V7p-2N-LBu" firstAttribute="leading" secondItem="Nmq-S3-p7r" secondAttribute="leading" id="wFm-hL-lf5"/>
-                            <constraint firstItem="u42-9E-4XS" firstAttribute="top" secondItem="V7p-2N-LBu" secondAttribute="bottom" constant="20" id="y9B-ll-EhM"/>
+                            <constraint firstItem="u42-9E-4XS" firstAttribute="top" secondItem="V7p-2N-LBu" secondAttribute="bottom" constant="30" id="y9B-ll-EhM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -96,11 +101,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="freezer" width="55.666667938232422" height="30.666666030883789"/>
-        <image name="fridge" width="55.666667938232422" height="30.666666030883789"/>
+        <image name="add_food" width="68" height="26"/>
+        <image name="freezer" width="55.5" height="30.5"/>
+        <image name="fridge" width="55.5" height="30.5"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
-        <image name="other" width="55.666667938232422" height="30.666666030883789"/>
-        <image name="total_fill" width="55.666667938232422" height="30.666666030883789"/>
+        <image name="other" width="55.5" height="30.5"/>
+        <image name="total_fill" width="55.5" height="30.5"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
