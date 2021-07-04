@@ -43,7 +43,7 @@
                                 </state>
                             </button>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="검색" translatesAutoresizingMaskIntoConstraints="NO" id="u42-9E-4XS">
-                                <rect key="frame" x="20" y="190" width="365" height="51"/>
+                                <rect key="frame" x="20" y="190" width="350" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
