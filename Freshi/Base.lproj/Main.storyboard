@@ -23,7 +23,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재료" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7p-2N-LBu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="재료" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7p-2N-LBu">
                                 <rect key="frame" x="20" y="138" width="45" height="32"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <color key="textColor" red="0.69019607843137254" green="0.57647058823529407" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,14 +36,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uto-uR-hYV">
-                                <rect key="frame" x="340.66666666666669" y="106.33333333333333" width="29.333333333333314" height="27.666666666666671"/>
+                                <rect key="frame" x="340.66666666666669" y="105.66666666666667" width="29.333333333333314" height="29.000000000000014"/>
                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                 <state key="normal" image="gearshape" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                 </state>
                             </button>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="검색" translatesAutoresizingMaskIntoConstraints="NO" id="u42-9E-4XS">
-                                <rect key="frame" x="20" y="190" width="350" height="51"/>
+                                <rect key="frame" x="20" y="190" width="365" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -57,6 +57,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uto-uR-hYV" secondAttribute="trailing" constant="20" id="UId-Xj-sUE"/>
                             <constraint firstItem="jWe-T2-rnf" firstAttribute="leading" secondItem="V7p-2N-LBu" secondAttribute="trailing" id="b3n-DV-ecD"/>
                             <constraint firstItem="Nmq-S3-p7r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dDw-G3-DJe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Nmq-S3-p7r" secondAttribute="trailing" constant="273" id="dYD-dI-NgH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jWe-T2-rnf" secondAttribute="trailing" constant="175" id="ecH-C0-Tmd"/>
                             <constraint firstItem="Uto-uR-hYV" firstAttribute="centerY" secondItem="Nmq-S3-p7r" secondAttribute="centerY" id="hWY-t9-cWk"/>
                             <constraint firstItem="u42-9E-4XS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iDt-UR-EYz"/>
                             <constraint firstItem="V7p-2N-LBu" firstAttribute="leading" secondItem="Nmq-S3-p7r" secondAttribute="leading" id="wFm-hL-lf5"/>
