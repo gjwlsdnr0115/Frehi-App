@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var foodInfoTableView: UITableView!
     
     
+    @IBOutlet weak var foodSearchBar: UISearchBar!
     
     let list = DummyData.generateData()
     
@@ -21,6 +22,7 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        foodInfoTableView.backgroundColor = UIColor.white
         foodInfoTableView.tableFooterView = UIView(frame: .zero)
         foodInfoTableView.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
     }
