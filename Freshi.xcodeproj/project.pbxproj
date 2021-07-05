@@ -14,6 +14,10 @@
 		0E4492A32691CB4E004D9C7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4492A12691CB4E004D9C7E /* LaunchScreen.storyboard */; };
 		0E7705472692C8FF0052F3A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7705462692C8FF0052F3A4 /* HomeViewController.swift */; };
 		0E7705492692D3600052F3A4 /* FoodInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7705482692D3600052F3A4 /* FoodInfoCell.swift */; };
+		0E86A931269348F300E386DD /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E86A92F269348F300E386DD /* DataModel.xcdatamodeld */; };
+		0E86A95726934E2F00E386DD /* FoodEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E86A95526934E2F00E386DD /* FoodEntity+CoreDataClass.swift */; };
+		0E86A95826934E2F00E386DD /* FoodEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E86A95626934E2F00E386DD /* FoodEntity+CoreDataProperties.swift */; };
+		0E86A95A26934EB500E386DD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E86A95926934EB500E386DD /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		0E4492A42691CB4E004D9C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7705462692C8FF0052F3A4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0E7705482692D3600052F3A4 /* FoodInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoCell.swift; sourceTree = "<group>"; };
+		0E86A930269348F300E386DD /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		0E86A95526934E2F00E386DD /* FoodEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		0E86A95626934E2F00E386DD /* FoodEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0E86A95926934EB500E386DD /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		0E4492952691CB4C004D9C7E /* Freshi */ = {
 			isa = PBXGroup;
 			children = (
+				0E86A92E269348DB00E386DD /* Shared */,
 				0E4492962691CB4C004D9C7E /* AppDelegate.swift */,
 				0E4492982691CB4C004D9C7E /* SceneDelegate.swift */,
 				0E44929C2691CB4C004D9C7E /* Main.storyboard */,
@@ -68,6 +77,17 @@
 				0E7705482692D3600052F3A4 /* FoodInfoCell.swift */,
 			);
 			path = Freshi;
+			sourceTree = "<group>";
+		};
+		0E86A92E269348DB00E386DD /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0E86A95526934E2F00E386DD /* FoodEntity+CoreDataClass.swift */,
+				0E86A95626934E2F00E386DD /* FoodEntity+CoreDataProperties.swift */,
+				0E86A92F269348F300E386DD /* DataModel.xcdatamodeld */,
+				0E86A95926934EB500E386DD /* DataManager.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +161,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4492972691CB4C004D9C7E /* AppDelegate.swift in Sources */,
+				0E86A95A26934EB500E386DD /* DataManager.swift in Sources */,
+				0E86A931269348F300E386DD /* DataModel.xcdatamodeld in Sources */,
+				0E86A95826934E2F00E386DD /* FoodEntity+CoreDataProperties.swift in Sources */,
+				0E86A95726934E2F00E386DD /* FoodEntity+CoreDataClass.swift in Sources */,
 				0E7705492692D3600052F3A4 /* FoodInfoCell.swift in Sources */,
 				0E4492992691CB4C004D9C7E /* SceneDelegate.swift in Sources */,
 				0E7705472692C8FF0052F3A4 /* HomeViewController.swift in Sources */,
@@ -345,6 +369,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0E86A92F269348F300E386DD /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0E86A930269348F300E386DD /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 0E86A930269348F300E386DD /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0E44928B2691CB4C004D9C7E /* Project object */;
 }
