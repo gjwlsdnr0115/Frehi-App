@@ -325,32 +325,48 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="U1R-cR-SCc">
-                                        <rect key="frame" x="200" y="324.66666666666663" width="80" height="22"/>
+                                        <rect key="frame" x="200" y="324" width="80" height="23.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6V-Pe-T4K">
-                                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="23.333333333333332" height="23.333333333333332"/>
                                                 <color key="tintColor" red="0.69019607839999997" green="0.57647058819999997" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" image="minus.circle.fill" catalog="system"/>
+                                                <state key="normal" image="minus.circle.fill" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="minusCount:" destination="dG9-89-abh" eventType="touchUpInside" id="EZm-jq-aJc"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnw-N7-q7j">
-                                                <rect key="frame" x="35.666666666666686" y="0.0" width="9" height="22"/>
+                                                <rect key="frame" x="35.666666666666686" y="0.0" width="9" height="23.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1P-iO-K7F">
-                                                <rect key="frame" x="60.333333333333307" y="0.0" width="19.666666666666664" height="22"/>
+                                                <rect key="frame" x="56.666666666666693" y="0.0" width="23.333333333333336" height="23.333333333333332"/>
                                                 <color key="tintColor" red="0.69019607839999997" green="0.57647058819999997" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" image="plus.circle.fill" catalog="system"/>
+                                                <state key="normal" image="plus.circle.fill" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="plusCount:" destination="dG9-89-abh" eventType="touchUpInside" id="bZU-KK-6pa"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRV-3I-Hce">
+                                        <rect key="frame" x="56.333333333333329" y="210.66666666666669" width="5.3333333333333357" height="17"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCV-vS-7lZ">
+                                        <rect key="frame" x="80.666666666666671" y="291.66666666666669" width="5.3333333333333286" height="17"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -368,7 +384,9 @@
                                     <constraint firstItem="ucl-Fg-KeS" firstAttribute="top" secondItem="DNC-Zn-rmd" secondAttribute="bottom" constant="20" id="OMM-FU-y3x"/>
                                     <constraint firstItem="OT1-n2-oAJ" firstAttribute="leading" secondItem="zar-Cw-pde" secondAttribute="leading" constant="60" id="OtO-c8-OMO"/>
                                     <constraint firstItem="OAO-9j-mQj" firstAttribute="top" secondItem="zar-Cw-pde" secondAttribute="top" constant="20" id="T4g-4T-DqP"/>
+                                    <constraint firstItem="oCV-vS-7lZ" firstAttribute="leading" secondItem="ucl-Fg-KeS" secondAttribute="trailing" constant="2" id="UPk-Tk-mHk"/>
                                     <constraint firstAttribute="bottom" secondItem="MFC-Fu-7tL" secondAttribute="bottom" constant="20" id="Wrm-Fy-pI9"/>
+                                    <constraint firstItem="RRV-3I-Hce" firstAttribute="centerY" secondItem="bvQ-2v-7jv" secondAttribute="centerY" id="YoB-Hh-hD2"/>
                                     <constraint firstItem="DNC-Zn-rmd" firstAttribute="top" secondItem="bvQ-2v-7jv" secondAttribute="bottom" constant="10" id="Zu3-sL-ehP"/>
                                     <constraint firstAttribute="trailing" secondItem="OT1-n2-oAJ" secondAttribute="trailing" constant="60" id="c73-RP-pgp"/>
                                     <constraint firstAttribute="trailing" secondItem="U1R-cR-SCc" secondAttribute="trailing" constant="30" id="cKQ-YR-UJA"/>
@@ -376,7 +394,9 @@
                                     <constraint firstItem="RCm-7v-vLs" firstAttribute="leading" secondItem="ucl-Fg-KeS" secondAttribute="trailing" constant="100" id="eJN-v9-m7x"/>
                                     <constraint firstItem="KfJ-5y-dCf" firstAttribute="top" secondItem="ucl-Fg-KeS" secondAttribute="bottom" constant="10" id="eoQ-Dd-nMe"/>
                                     <constraint firstAttribute="height" constant="440" id="ezT-Fu-TpE"/>
+                                    <constraint firstItem="RRV-3I-Hce" firstAttribute="leading" secondItem="bvQ-2v-7jv" secondAttribute="trailing" constant="2" id="f6M-Ad-oty"/>
                                     <constraint firstItem="OAO-9j-mQj" firstAttribute="centerX" secondItem="zar-Cw-pde" secondAttribute="centerX" id="p2u-mV-kxY"/>
+                                    <constraint firstItem="oCV-vS-7lZ" firstAttribute="centerY" secondItem="ucl-Fg-KeS" secondAttribute="centerY" id="trS-BH-4ng"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -422,6 +442,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
