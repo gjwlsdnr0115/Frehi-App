@@ -10,24 +10,50 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var foodInfoTableView: UITableView!
-    
-    
     @IBOutlet weak var foodSearchBar: UISearchBar!
     
-    let list = DummyData.generateData()
+    var token: NSObjectProtocol!
+
     
+    let list = DummyData.generateData()
+    var foodData = [FoodEntity]()
+    let dateFormatter = SharedDateFormatter()
+    var today: Date!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        
         foodInfoTableView.backgroundColor = UIColor.white
         foodInfoTableView.tableFooterView = UIView(frame: .zero)
         foodInfoTableView.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
+        
+        today = dateFormatter.stringToDate(dateString: dateFormatter.format(date: Date()))
+        
+        reloadData()
+        token = NotificationCenter.default.addObserver(forName: NSNotification.Name.NewDataDidInsert, object: nil, queue: .main, using: { [weak self] (noti) in
+            self?.reloadData()
+            self?.foodInfoTableView.reloadData()
+            // implement update UI code
+        })
+        
+        
+        
     }
     
-    
+    func reloadData() {
+        foodData = DataManager.shared.fetchFood()
+        foodData.sort { food1, food2 in
+            
+            let food1Left = dateFormatter.stringToDate(dateString: food1.date!) - today
+            let food2Left = dateFormatter.stringToDate(dateString: food2.date!) - today
+
+            return food1Left < food2Left
+        }
+        
+    }
     
     @IBAction func addNewFood(_ sender: Any) {
         let addFoodVC = storyboard?.instantiateViewController(identifier: "AddFoodViewController") as! AddFoodViewController
@@ -44,28 +70,45 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        list.count
+        foodData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodInfoCell", for: indexPath) as! FoodInfoCell
         
 
-        let data = list[indexPath.row]
+        let data = foodData[indexPath.row]
         
         cell.foodNameLabel.text = data.name
         cell.foodCountLabel.text = "\(data.count)"
-        cell.foodExpireDayLabel.text = "\(data.remaining)일"
+        
+        let remaining = dateFormatter.stringToDate(dateString: data.date!) - today
+        if remaining > 0 {
+            cell.foodExpireDayLabel.text = "\(remaining)일"
+        } else if remaining < 0{
+            cell.foodExpireDayLabel.text = "만료"
+        } else {
+            cell.foodExpireDayLabel.text = "오늘까지"
+        }
+
+        
         cell.foodPurchaseDateLabel.text = data.date
         
-        if let image = data.img {
-            cell.foodImageView.image = image
+        if let image = data.image {
+            cell.foodImageView.image = UIImage(data: image)
+        } else {
+            cell.foodImageView.image = UIImage(named: "default_food_image")
         }
         
         return cell
     }
     
     
+}
+
+
+extension NSNotification.Name {
+    static let NewDataDidInsert = NSNotification.Name("NewDataDidInsertNotification")
 }
 
 

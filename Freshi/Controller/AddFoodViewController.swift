@@ -108,7 +108,18 @@ class AddFoodViewController: UIViewController {
     
     
     @IBAction func addBtnToggled(_ sender: Any) {
-        
+        print("toggled")
+        if let name = nameTextField.text, let date = expireDateTextField.text {
+            print("text good")
+            if imageRegistered {
+                
+            } else {
+                DataManager.shared.createFood(name: name, date: date, count: foodCount, location: location) {
+                    NotificationCenter.default.post(name: NSNotification.Name.NewDataDidInsert, object: nil)
+                }
+                dismiss(animated: false, completion: nil)
+            }
+        }
     }
     
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E36BAEF2694465700328C7C /* DataManager+Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36BAEE2694465700328C7C /* DataManager+Food.swift */; };
+		0E36BAF22694509500328C7C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36BAF12694509500328C7C /* Date+Extension.swift */; };
 		0E4492972691CB4C004D9C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4492962691CB4C004D9C7E /* AppDelegate.swift */; };
 		0E4492992691CB4C004D9C7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4492982691CB4C004D9C7E /* SceneDelegate.swift */; };
 		0E44929E2691CB4C004D9C7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E44929C2691CB4C004D9C7E /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E36BAEE2694465700328C7C /* DataManager+Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Food.swift"; sourceTree = "<group>"; };
+		0E36BAF12694509500328C7C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		0E4492932691CB4C004D9C7E /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4492962691CB4C004D9C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E4492982691CB4C004D9C7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E36BAF02694508500328C7C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0E36BAF12694509500328C7C /* Date+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		0E44928A2691CB4C004D9C7E = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +84,7 @@
 		0E4492952691CB4C004D9C7E /* Freshi */ = {
 			isa = PBXGroup;
 			children = (
+				0E36BAF02694508500328C7C /* Extension */,
 				0EF312222694396800C72978 /* View */,
 				0EF312212694394800C72978 /* Controller */,
 				0E86A92E269348DB00E386DD /* Shared */,
@@ -93,6 +106,7 @@
 				0E86A92F269348F300E386DD /* DataModel.xcdatamodeld */,
 				0E86A95926934EB500E386DD /* DataManager.swift */,
 				0EF3121F2694380C00C72978 /* SharedDateFormatter.swift */,
+				0E36BAEE2694465700328C7C /* DataManager+Food.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -186,6 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4492972691CB4C004D9C7E /* AppDelegate.swift in Sources */,
+				0E36BAEF2694465700328C7C /* DataManager+Food.swift in Sources */,
+				0E36BAF22694509500328C7C /* Date+Extension.swift in Sources */,
 				0E86A95A26934EB500E386DD /* DataManager.swift in Sources */,
 				0EF3121E2694115400C72978 /* RoundedUIView.swift in Sources */,
 				0E86A931269348F300E386DD /* DataModel.xcdatamodeld in Sources */,

@@ -26,4 +26,8 @@ class SharedDateFormatter {
         return dateString
     }
     
+    func stringToDate(dateString: String) -> Date {
+        return formatter.date(from: dateString)!
+    }
+    
 }
