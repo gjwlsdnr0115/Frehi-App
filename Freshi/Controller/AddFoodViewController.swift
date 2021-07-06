@@ -18,7 +18,6 @@ class AddFoodViewController: UIViewController {
     @IBOutlet weak var otherBtn: UIButton!
     
     var foodCount = 0
-    
     var imageRegistered = false
     var location = 0
     
@@ -29,11 +28,11 @@ class AddFoodViewController: UIViewController {
         super.viewDidLoad()
         
         nameTextField.delegate = self
-        
         view.backgroundColor = UIColor(displayP3Red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
         createDatePicker()
     }
     
+    // set datePicker as inputView for expireDateTextField
     func createDatePicker() {
         expireDateTextField.textAlignment = .center
         
@@ -52,10 +51,9 @@ class AddFoodViewController: UIViewController {
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         }
+        
         datePicker.datePickerMode = .date
         datePicker.locale = Locale(identifier: "ko_kr")
-        
-        
         expireDateTextField.inputView = datePicker
     }
     
@@ -66,7 +64,7 @@ class AddFoodViewController: UIViewController {
     }
     
     
-    
+    // set location of food
     @IBAction func fridgeToggled(_ sender: Any) {
         if location != 0 {
             location = 0
@@ -93,7 +91,7 @@ class AddFoodViewController: UIViewController {
         }
     }
     
-    
+    // set count of food
     @IBAction func plusCount(_ sender: Any) {
         foodCount += 1
         foodCountLabel.text = "\(foodCount)"
@@ -106,18 +104,18 @@ class AddFoodViewController: UIViewController {
         }
     }
     
-    
+    // save food data in CoreData
     @IBAction func addBtnToggled(_ sender: Any) {
-        print("toggled")
         if let name = nameTextField.text, let date = expireDateTextField.text {
-            print("text good")
-            if imageRegistered {
-                
-            } else {
-                DataManager.shared.createFood(name: name, date: date, count: foodCount, location: location) {
-                    NotificationCenter.default.post(name: NSNotification.Name.NewDataDidInsert, object: nil)
+            if !name.isEmpty, !date.isEmpty {
+                if imageRegistered {
+                    
+                } else {
+                    DataManager.shared.createFood(name: name, date: date, count: foodCount, location: location) {
+                        NotificationCenter.default.post(name: NSNotification.Name.NewDataDidInsert, object: nil)
+                    }
+                    dismiss(animated: false, completion: nil)
                 }
-                dismiss(animated: false, completion: nil)
             }
         }
     }

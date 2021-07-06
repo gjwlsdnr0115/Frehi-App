@@ -12,27 +12,36 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var foodInfoTableView: UITableView!
     @IBOutlet weak var foodSearchBar: UISearchBar!
     
+    // NotificationCenter Observer token
     var token: NSObjectProtocol!
 
-    
-    let list = DummyData.generateData()
     var foodData = [FoodEntity]()
     let dateFormatter = SharedDateFormatter()
     var today: Date!
+    
+    // colors for foodInfoCell
+    let greenColor = UIColor(displayP3Red: 17/255.0, green: 211/255.0, blue: 36/255.0, alpha: 1.0)
+    let redColor = UIColor(displayP3Red: 255/255.0, green: 77/255.0, blue: 77/255.0, alpha: 1.0)
+    let yellowColor = UIColor(displayP3Red: 255/255.0, green: 236/255.0, blue: 88/255.0, alpha: 1.0)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        
+        // set tableView UI
         foodInfoTableView.backgroundColor = UIColor.white
         foodInfoTableView.tableFooterView = UIView(frame: .zero)
         foodInfoTableView.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
         
+        // get today's date
         today = dateFormatter.stringToDate(dateString: dateFormatter.format(date: Date()))
         
+        // get food data from CoreData
         reloadData()
+        
+        // add token
         token = NotificationCenter.default.addObserver(forName: NSNotification.Name.NewDataDidInsert, object: nil, queue: .main, using: { [weak self] (noti) in
             self?.reloadData()
             self?.foodInfoTableView.reloadData()
@@ -43,8 +52,11 @@ class HomeViewController: UIViewController {
         
     }
     
+    // fetch data
     func reloadData() {
         foodData = DataManager.shared.fetchFood()
+        
+        // sort food in order of remaining days
         foodData.sort { food1, food2 in
             
             let food1Left = dateFormatter.stringToDate(dateString: food1.date!) - today
@@ -60,6 +72,11 @@ class HomeViewController: UIViewController {
         addFoodVC.modalPresentationStyle = .overCurrentContext
         present(addFoodVC, animated: false, completion: nil)
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(token!)
+    }
+    
     
 }
 
@@ -79,15 +96,20 @@ extension HomeViewController: UITableViewDataSource {
 
         let data = foodData[indexPath.row]
         
+        
+        // set data in foodInfoCell
         cell.foodNameLabel.text = data.name
         cell.foodCountLabel.text = "\(data.count)"
         
-        let remaining = dateFormatter.stringToDate(dateString: data.date!) - today
+        let remaining = dateFormatter.stringToDate(dateString: data.date!) - today  // get remaining days until expiration
         if remaining > 0 {
-            cell.foodExpireDayLabel.text = "\(remaining)일"
+            cell.foodExpireDayLabel.textColor = greenColor
+            cell.foodExpireDayLabel.text = "\(remaining)일 남음"
         } else if remaining < 0{
+            cell.foodExpireDayLabel.textColor = redColor
             cell.foodExpireDayLabel.text = "만료"
         } else {
+            cell.foodExpireDayLabel.textColor = yellowColor
             cell.foodExpireDayLabel.text = "오늘까지"
         }
 
@@ -97,6 +119,7 @@ extension HomeViewController: UITableViewDataSource {
         if let image = data.image {
             cell.foodImageView.image = UIImage(data: image)
         } else {
+            // no image registered
             cell.foodImageView.image = UIImage(named: "default_food_image")
         }
         
@@ -111,21 +134,3 @@ extension NSNotification.Name {
     static let NewDataDidInsert = NSNotification.Name("NewDataDidInsertNotification")
 }
 
-
-
-struct DummyData {
-    let name: String
-    let img: UIImage?
-    let count: Int
-    let date: String
-    let remaining: Int
-    let placed: String
-    
-    static func generateData() -> [DummyData] {
-        let data1 = DummyData(name: "딸기", img: UIImage(named: "strawberry_stock"), count: 3, date: "2021.6.21", remaining: 4, placed: "fridge")
-        let data2 = DummyData(name: "사과", img: UIImage(named: "default_food_image"), count: 7, date: "2021.6.18", remaining: 2, placed: "fridge")
-        
-        return [data1, data2]
-
-    }
-}
