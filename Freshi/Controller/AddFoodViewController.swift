@@ -8,10 +8,19 @@
 import UIKit
 
 class AddFoodViewController: UIViewController {
-
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var expireDateTextField: UITextField!
+    @IBOutlet weak var foodCountLabel: UILabel!
+    
+    @IBOutlet weak var fridgeBtn: UIButton!
+    @IBOutlet weak var freezerBtn: UIButton!
+    @IBOutlet weak var otherBtn: UIButton!
+    
+    var foodCount = 0
+    
+    var imageRegistered = false
+    var location = 0
     
     let datePicker = UIDatePicker()
     let dateFormatter = SharedDateFormatter()
@@ -54,6 +63,52 @@ class AddFoodViewController: UIViewController {
         
         expireDateTextField.text = "\(dateFormatter.format(date: datePicker.date))"
         self.view.endEditing(true)
+    }
+    
+    
+    
+    @IBAction func fridgeToggled(_ sender: Any) {
+        if location != 0 {
+            location = 0
+            fridgeBtn.isSelected = true
+            freezerBtn.isSelected = false
+            otherBtn.isSelected = false
+        }
+    }
+    @IBAction func freezerToggled(_ sender: Any) {
+        if location != 1 {
+            location = 1
+            freezerBtn.isSelected = true
+            fridgeBtn.isSelected = false
+            otherBtn.isSelected = false
+        }
+    }
+    @IBAction func otherToggled(_ sender: Any) {
+        if location != 2 {
+            location = 2
+            otherBtn.isSelected = true
+            freezerBtn.isSelected = false
+            fridgeBtn.isSelected = false
+            
+        }
+    }
+    
+    
+    @IBAction func plusCount(_ sender: Any) {
+        foodCount += 1
+        foodCountLabel.text = "\(foodCount)"
+    }
+    
+    @IBAction func minusCount(_ sender: Any) {
+        if foodCount != 0 {
+            foodCount -= 1
+            foodCountLabel.text = "\(foodCount)"
+        }
+    }
+    
+    
+    @IBAction func addBtnToggled(_ sender: Any) {
+        
     }
     
     

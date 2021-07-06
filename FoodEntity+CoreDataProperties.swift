@@ -16,10 +16,10 @@ extension FoodEntity {
         return NSFetchRequest<FoodEntity>(entityName: "Food")
     }
 
+    @NSManaged public var location: Int16
     @NSManaged public var name: String?
     @NSManaged public var count: Int16
     @NSManaged public var date: String?
-    @NSManaged public var location: String?
     @NSManaged public var image: Data?
 
 }
