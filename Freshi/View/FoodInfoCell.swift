@@ -23,6 +23,8 @@ class FoodInfoCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         foodImageView.layer.cornerRadius = 15
+        foodImageView.layer.borderWidth = 1
+        foodImageView.layer.borderColor = UIColor.systemGray5.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -80,7 +80,7 @@ struct DummyData {
     
     static func generateData() -> [DummyData] {
         let data1 = DummyData(name: "딸기", img: UIImage(named: "strawberry_stock"), count: 3, date: "2021.6.21", remaining: 4, placed: "fridge")
-        let data2 = DummyData(name: "사과", img: UIImage(named: "apple_stock"), count: 7, date: "2021.6.18", remaining: 2, placed: "fridge")
+        let data2 = DummyData(name: "사과", img: UIImage(named: "default_food_image"), count: 7, date: "2021.6.18", remaining: 2, placed: "fridge")
         
         return [data1, data2]
 
