@@ -27,7 +27,14 @@ class HomeViewController: UIViewController {
         foodInfoTableView.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
     }
     
-
+    
+    
+    @IBAction func addNewFood(_ sender: Any) {
+        let addFoodVC = storyboard?.instantiateViewController(identifier: "AddFoodViewController") as! AddFoodViewController
+        addFoodVC.modalPresentationStyle = .overCurrentContext
+        present(addFoodVC, animated: false, completion: nil)
+    }
+    
 }
 
 
@@ -44,7 +51,6 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodInfoCell", for: indexPath) as! FoodInfoCell
         
 
-        
         let data = list[indexPath.row]
         
         cell.foodNameLabel.text = data.name
