@@ -72,6 +72,8 @@
 		0E4492952691CB4C004D9C7E /* Freshi */ = {
 			isa = PBXGroup;
 			children = (
+				0EF312222694396800C72978 /* View */,
+				0EF312212694394800C72978 /* Controller */,
 				0E86A92E269348DB00E386DD /* Shared */,
 				0E4492962691CB4C004D9C7E /* AppDelegate.swift */,
 				0E4492982691CB4C004D9C7E /* SceneDelegate.swift */,
@@ -79,10 +81,6 @@
 				0E44929F2691CB4E004D9C7E /* Assets.xcassets */,
 				0E4492A12691CB4E004D9C7E /* LaunchScreen.storyboard */,
 				0E4492A42691CB4E004D9C7E /* Info.plist */,
-				0E7705462692C8FF0052F3A4 /* HomeViewController.swift */,
-				0E7705482692D3600052F3A4 /* FoodInfoCell.swift */,
-				0EF3121B26940F1B00C72978 /* AddFoodViewController.swift */,
-				0EF3121D2694115400C72978 /* RoundedUIView.swift */,
 			);
 			path = Freshi;
 			sourceTree = "<group>";
@@ -97,6 +95,24 @@
 				0EF3121F2694380C00C72978 /* SharedDateFormatter.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		0EF312212694394800C72978 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E7705462692C8FF0052F3A4 /* HomeViewController.swift */,
+				0EF3121B26940F1B00C72978 /* AddFoodViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0EF312222694396800C72978 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E7705482692D3600052F3A4 /* FoodInfoCell.swift */,
+				0EF3121D2694115400C72978 /* RoundedUIView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
