@@ -69,10 +69,11 @@ extension DataManager {
         }
     }
     
-    func delete(entity: FoodEntity) {
+    func delete(entity: FoodEntity, completion: (() -> ())? = nil) {
         mainContext.perform {
             self.mainContext.delete(entity)
             self.saveMainContext()
+            completion?()
         }
     }
     

@@ -557,10 +557,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-Lg-hOu">
                                                 <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="37.333333333333336"/>
                                                 <state key="normal" image="delete_food"/>
+                                                <connections>
+                                                    <action selector="deleteBtnToggled:" destination="8eQ-k6-Thg" eventType="touchUpInside" id="Hlh-NX-RrT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0w-UQ-4MT">
                                                 <rect key="frame" x="134.33333333333331" y="0.0" width="104.33333333333331" height="37.333333333333336"/>
                                                 <state key="normal" image="add"/>
+                                                <connections>
+                                                    <action selector="modifyBtnToggled:" destination="8eQ-k6-Thg" eventType="touchUpInside" id="Nx0-5Q-Fi7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

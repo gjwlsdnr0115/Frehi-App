@@ -16,6 +16,9 @@ class ModifyFoodViewController: UIViewController {
     @IBOutlet weak var fridgeBtn: UIButton!
     @IBOutlet weak var freezerBtn: UIButton!
     @IBOutlet weak var otherBtn: UIButton!
+
+    
+    var modifyFood: FoodEntity?
     
     var foodCount = 0
     var imageRegistered = false
@@ -30,6 +33,7 @@ class ModifyFoodViewController: UIViewController {
         nameTextField.delegate = self
         view.backgroundColor = UIColor(displayP3Red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
         createDatePicker()
+        setFoodData()
     }
     
     
@@ -62,6 +66,52 @@ class ModifyFoodViewController: UIViewController {
         expireDateTextField.text = "\(dateFormatter.format(date: datePicker.date))"
         self.view.endEditing(true)
     }
+    
+    // set modifying food's data
+    func setFoodData() {
+        if let foodData = modifyFood {
+            
+            // set food location
+            switch foodData.location {
+            case 0:
+                fridgeBtn.isSelected = true
+                freezerBtn.isSelected = false
+                otherBtn.isSelected = false
+                location = 0
+            case 1:
+                fridgeBtn.isSelected = false
+                freezerBtn.isSelected = true
+                otherBtn.isSelected = false
+                location = 1
+            case 2:
+                fridgeBtn.isSelected = false
+                freezerBtn.isSelected = false
+                otherBtn.isSelected = true
+                location = 2
+            default:
+                break
+            }
+            
+            // set food name
+            nameTextField.text = foodData.name
+            
+            // set food date
+            expireDateTextField.text = foodData.date
+            
+            // set food count
+            foodCount = Int(foodData.count)
+            foodCountLabel.text = "\(foodData.count)"
+            
+            // set image
+            if let image = foodData.image {
+                
+            } else {
+                imageRegistered = false
+                print("no image")
+            }
+        }
+    }
+    
     
     // set location of food
     @IBAction func fridgeToggled(_ sender: Any) {
@@ -103,8 +153,30 @@ class ModifyFoodViewController: UIViewController {
         }
     }
 
+    @IBAction func modifyBtnToggled(_ sender: Any) {
+        if let name = nameTextField.text, let date = expireDateTextField.text , let foodData = modifyFood {
+            if !name.isEmpty, !date.isEmpty {
+                if imageRegistered {
+                    
+                } else {
+                    
+                    DataManager.shared.updateFood(entity: foodData, name: name, date: date, count: foodCount, location: location) {
+                        NotificationCenter.default.post(name: NSNotification.Name.NewDataDidInsert, object: nil)
+                        self.dismiss(animated: false, completion: nil)
+                    }
+                }
+            }
+        }
+    }
     
-    
+    @IBAction func deleteBtnToggled(_ sender: Any) {
+        if let foodData = modifyFood {
+            DataManager.shared.delete(entity: foodData) {
+                NotificationCenter.default.post(name: NSNotification.Name.NewDataDidInsert, object: nil)
+                self.dismiss(animated: false, completion: nil)
+            }
+        }
+    }
     
     
     @IBAction func cancel(_ sender: Any) {

@@ -82,6 +82,14 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = foodData[indexPath.row]
+        
+        let modifyFoodVC = storyboard?.instantiateViewController(identifier: "ModifyFoodViewController") as! ModifyFoodViewController
+        modifyFoodVC.modifyFood = data
+        modifyFoodVC.modalPresentationStyle = .overCurrentContext
+        present(modifyFoodVC, animated: false, completion: nil)
+    }
     
 }
 
