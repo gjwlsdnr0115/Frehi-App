@@ -20,6 +20,7 @@
 		0E86A95726934E2F00E386DD /* FoodEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E86A95526934E2F00E386DD /* FoodEntity+CoreDataClass.swift */; };
 		0E86A95826934E2F00E386DD /* FoodEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E86A95626934E2F00E386DD /* FoodEntity+CoreDataProperties.swift */; };
 		0E86A95A26934EB500E386DD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E86A95926934EB500E386DD /* DataManager.swift */; };
+		0EE3B0B526970B0300AB450F /* ModifyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE3B0B426970B0300AB450F /* ModifyFoodViewController.swift */; };
 		0EF3121C26940F1B00C72978 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3121B26940F1B00C72978 /* AddFoodViewController.swift */; };
 		0EF3121E2694115400C72978 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3121D2694115400C72978 /* RoundedUIView.swift */; };
 		0EF312202694380C00C72978 /* SharedDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3121F2694380C00C72978 /* SharedDateFormatter.swift */; };
@@ -41,6 +42,7 @@
 		0E86A95526934E2F00E386DD /* FoodEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0E86A95626934E2F00E386DD /* FoodEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0E86A95926934EB500E386DD /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		0EE3B0B426970B0300AB450F /* ModifyFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyFoodViewController.swift; sourceTree = "<group>"; };
 		0EF3121B26940F1B00C72978 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		0EF3121D2694115400C72978 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		0EF3121F2694380C00C72978 /* SharedDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDateFormatter.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				0E7705462692C8FF0052F3A4 /* HomeViewController.swift */,
 				0EF3121B26940F1B00C72978 /* AddFoodViewController.swift */,
+				0EE3B0B426970B0300AB450F /* ModifyFoodViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				0EF3121C26940F1B00C72978 /* AddFoodViewController.swift in Sources */,
 				0EF312202694380C00C72978 /* SharedDateFormatter.swift in Sources */,
 				0E86A95726934E2F00E386DD /* FoodEntity+CoreDataClass.swift in Sources */,
+				0EE3B0B526970B0300AB450F /* ModifyFoodViewController.swift in Sources */,
 				0E7705492692D3600052F3A4 /* FoodInfoCell.swift in Sources */,
 				0E4492992691CB4C004D9C7E /* SceneDelegate.swift in Sources */,
 				0E7705472692C8FF0052F3A4 /* HomeViewController.swift in Sources */,
