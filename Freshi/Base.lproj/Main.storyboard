@@ -485,10 +485,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0w-UQ-4MT">
-                                        <rect key="frame" x="98" y="382.66666666666663" width="104.33333333333331" height="37.333333333333314"/>
-                                        <state key="normal" image="add"/>
-                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_photo" translatesAutoresizingMaskIntoConstraints="NO" id="mOh-JU-vOu">
                                         <rect key="frame" x="90" y="95.666666666666686" width="120" height="120"/>
                                         <constraints>
@@ -555,6 +551,19 @@
                                             <action selector="cancel:" destination="8eQ-k6-Thg" eventType="touchUpInside" id="FmJ-IB-72f"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="VIC-Bg-fWA">
+                                        <rect key="frame" x="30.666666666666671" y="382" width="238.66666666666663" height="37.333333333333314"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-Lg-hOu">
+                                                <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="37.333333333333336"/>
+                                                <state key="normal" image="delete_food"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0w-UQ-4MT">
+                                                <rect key="frame" x="134.33333333333331" y="0.0" width="104.33333333333331" height="37.333333333333336"/>
+                                                <state key="normal" image="add"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -566,20 +575,20 @@
                                     <constraint firstAttribute="trailing" secondItem="r54-Y0-YHd" secondAttribute="trailing" constant="30" id="Dkw-cH-5NK"/>
                                     <constraint firstItem="H4j-L5-KVo" firstAttribute="top" secondItem="5hy-6h-9w1" secondAttribute="top" constant="45" id="DwP-Pp-WjQ"/>
                                     <constraint firstItem="eff-L4-1s7" firstAttribute="leading" secondItem="5hy-6h-9w1" secondAttribute="leading" constant="30" id="IhM-Wp-J8S"/>
-                                    <constraint firstItem="c0w-UQ-4MT" firstAttribute="centerX" secondItem="5hy-6h-9w1" secondAttribute="centerX" id="J1U-yH-hNb"/>
                                     <constraint firstItem="r54-Y0-YHd" firstAttribute="leading" secondItem="5hy-6h-9w1" secondAttribute="leading" constant="30" id="JZY-G8-dJE"/>
                                     <constraint firstAttribute="height" constant="440" id="LEY-IU-eut"/>
                                     <constraint firstItem="H4j-L5-KVo" firstAttribute="centerX" secondItem="5hy-6h-9w1" secondAttribute="centerX" id="Nlk-k0-DpP"/>
                                     <constraint firstItem="eff-L4-1s7" firstAttribute="top" secondItem="mOh-JU-vOu" secondAttribute="bottom" constant="10" id="Q5T-ew-Maz"/>
                                     <constraint firstItem="Fcg-YO-F2D" firstAttribute="top" secondItem="5hy-6h-9w1" secondAttribute="top" constant="15" id="dku-cj-C01"/>
+                                    <constraint firstItem="VIC-Bg-fWA" firstAttribute="centerX" secondItem="5hy-6h-9w1" secondAttribute="centerX" id="dmL-hY-iPT"/>
                                     <constraint firstItem="Fcg-YO-F2D" firstAttribute="leading" secondItem="5hy-6h-9w1" secondAttribute="leading" constant="15" id="i7t-vn-x0f"/>
                                     <constraint firstItem="DB6-jI-4Jg" firstAttribute="centerY" secondItem="MSs-fz-mU6" secondAttribute="centerY" id="i8j-6Y-bKr"/>
-                                    <constraint firstAttribute="bottom" secondItem="c0w-UQ-4MT" secondAttribute="bottom" constant="20" id="ihY-HV-jQw"/>
                                     <constraint firstItem="mOh-JU-vOu" firstAttribute="top" secondItem="H4j-L5-KVo" secondAttribute="bottom" constant="20" id="jfJ-N9-ff9"/>
                                     <constraint firstItem="RS4-gI-LAo" firstAttribute="centerY" secondItem="eff-L4-1s7" secondAttribute="centerY" id="keQ-CH-c9f"/>
                                     <constraint firstItem="r54-Y0-YHd" firstAttribute="top" secondItem="eff-L4-1s7" secondAttribute="bottom" constant="10" id="oXr-7z-zVm"/>
                                     <constraint firstAttribute="trailing" secondItem="MSs-fz-mU6" secondAttribute="trailing" constant="140" id="rbH-1C-Gbf"/>
                                     <constraint firstItem="Htq-qz-l0A" firstAttribute="leading" secondItem="ps2-YY-aTy" secondAttribute="trailing" constant="2" id="ses-z8-usa"/>
+                                    <constraint firstAttribute="bottom" secondItem="VIC-Bg-fWA" secondAttribute="bottom" constant="20.666666666666686" id="tsC-ym-our"/>
                                     <constraint firstItem="VnX-m1-cJ1" firstAttribute="leading" secondItem="ps2-YY-aTy" secondAttribute="trailing" constant="100" id="uoJ-OW-1i6"/>
                                     <constraint firstItem="mOh-JU-vOu" firstAttribute="centerX" secondItem="5hy-6h-9w1" secondAttribute="centerX" id="uwf-9R-Mco"/>
                                     <constraint firstItem="DB6-jI-4Jg" firstAttribute="leading" secondItem="MSs-fz-mU6" secondAttribute="trailing" constant="30" id="w3M-Rj-faB"/>
@@ -615,6 +624,7 @@
         <image name="add" width="104.33333587646484" height="37.333332061767578"/>
         <image name="add_food" width="68" height="25.333333969116211"/>
         <image name="add_photo" width="74" height="60.666667938232422"/>
+        <image name="delete_food" width="104.33333587646484" height="37.333332061767578"/>
         <image name="freezer" width="55.666667938232422" height="30.666666030883789"/>
         <image name="freezer_fill" width="55.666667938232422" height="30.666666030883789"/>
         <image name="fridge" width="55.666667938232422" height="30.666666030883789"/>
