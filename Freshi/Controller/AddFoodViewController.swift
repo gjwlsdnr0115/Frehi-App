@@ -112,7 +112,7 @@ class AddFoodViewController: UIViewController {
                     
                 } else {
                     DataManager.shared.createFood(name: name, date: date, count: foodCount, location: location) {
-                        NotificationCenter.default.post(name: NSNotification.Name.NewDataDidInsert, object: nil)
+                        NotificationCenter.default.post(name: NSNotification.Name.DataDidUpdate, object: nil)
                     }
                     dismiss(animated: false, completion: nil)
                 }

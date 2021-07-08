@@ -563,7 +563,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0w-UQ-4MT">
                                                 <rect key="frame" x="134.33333333333331" y="0.0" width="104.33333333333331" height="37.333333333333336"/>
-                                                <state key="normal" image="add"/>
+                                                <state key="normal" image="done_editing"/>
                                                 <connections>
                                                     <action selector="modifyBtnToggled:" destination="8eQ-k6-Thg" eventType="touchUpInside" id="Nx0-5Q-Fi7"/>
                                                 </connections>
@@ -631,6 +631,7 @@
         <image name="add_food" width="68" height="25.333333969116211"/>
         <image name="add_photo" width="74" height="60.666667938232422"/>
         <image name="delete_food" width="104.33333587646484" height="37.333332061767578"/>
+        <image name="done_editing" width="104.33333587646484" height="37.333332061767578"/>
         <image name="freezer" width="55.666667938232422" height="30.666666030883789"/>
         <image name="freezer_fill" width="55.666667938232422" height="30.666666030883789"/>
         <image name="fridge" width="55.666667938232422" height="30.666666030883789"/>

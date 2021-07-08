@@ -58,6 +58,13 @@ class ModifyFoodViewController: UIViewController {
         
         datePicker.datePickerMode = .date
         datePicker.locale = Locale(identifier: "ko_kr")
+        
+        // set modifying food's date on datePicker
+        var date = Date()
+        if let foodData = modifyFood {
+            date = dateFormatter.stringToDate(dateString: foodData.date!)
+        }
+        datePicker.date = date
         expireDateTextField.inputView = datePicker
     }
     
@@ -161,7 +168,7 @@ class ModifyFoodViewController: UIViewController {
                 } else {
                     
                     DataManager.shared.updateFood(entity: foodData, name: name, date: date, count: foodCount, location: location) {
-                        NotificationCenter.default.post(name: NSNotification.Name.NewDataDidInsert, object: nil)
+                        NotificationCenter.default.post(name: NSNotification.Name.DataDidUpdate, object: nil)
                         self.dismiss(animated: false, completion: nil)
                     }
                 }
@@ -172,7 +179,7 @@ class ModifyFoodViewController: UIViewController {
     @IBAction func deleteBtnToggled(_ sender: Any) {
         if let foodData = modifyFood {
             DataManager.shared.delete(entity: foodData) {
-                NotificationCenter.default.post(name: NSNotification.Name.NewDataDidInsert, object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name.DataDidUpdate, object: nil)
                 self.dismiss(animated: false, completion: nil)
             }
         }

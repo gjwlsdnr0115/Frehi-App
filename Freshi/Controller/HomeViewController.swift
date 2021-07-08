@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
         reloadData()
         
         // add token
-        token = NotificationCenter.default.addObserver(forName: NSNotification.Name.NewDataDidInsert, object: nil, queue: .main, using: { [weak self] (noti) in
+        token = NotificationCenter.default.addObserver(forName: NSNotification.Name.DataDidUpdate, object: nil, queue: .main, using: { [weak self] (noti) in
             self?.reloadData()
             self?.foodInfoTableView.reloadData()
             // implement update UI code
@@ -139,6 +139,6 @@ extension HomeViewController: UITableViewDataSource {
 
 
 extension NSNotification.Name {
-    static let NewDataDidInsert = NSNotification.Name("NewDataDidInsertNotification")
+    static let DataDidUpdate = NSNotification.Name("DataUpdatedNotification")
 }
 
