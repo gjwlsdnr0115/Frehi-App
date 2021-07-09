@@ -16,9 +16,10 @@ class AddFoodViewController: UIViewController {
     @IBOutlet weak var fridgeBtn: UIButton!
     @IBOutlet weak var freezerBtn: UIButton!
     @IBOutlet weak var otherBtn: UIButton!
+    @IBOutlet weak var foodImageView: UIImageView!
+    var imageData: Data?
     
     var foodCount = 0
-    var imageRegistered = false
     var location = 0
     
     let datePicker = UIDatePicker()
@@ -30,6 +31,8 @@ class AddFoodViewController: UIViewController {
         nameTextField.delegate = self
         view.backgroundColor = UIColor(displayP3Red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
         createDatePicker()
+        foodImageView.layer.cornerRadius = 5
+        foodImageView.layer.masksToBounds = true
     }
     
     // set datePicker as inputView for expireDateTextField
@@ -69,6 +72,7 @@ class AddFoodViewController: UIViewController {
     
     @IBAction func addPhoto(_ sender: Any) {
         let cameraVC = storyboard?.instantiateViewController(identifier: "CameraViewController") as! CameraViewController
+        cameraVC.delegate = self
         cameraVC.modalPresentationStyle = .fullScreen
         present(cameraVC, animated: true, completion: nil)
     }
@@ -118,13 +122,17 @@ class AddFoodViewController: UIViewController {
     @IBAction func addBtnToggled(_ sender: Any) {
         if let name = nameTextField.text, let date = expireDateTextField.text {
             if !name.isEmpty, !date.isEmpty {
-                if imageRegistered {
-                    
-                } else {
-                    DataManager.shared.createFood(name: name, date: date, count: foodCount, location: location) {
+                if let imageData = imageData {
+                    print("image exists")
+                    DataManager.shared.createFood(name: name, date: date, count: foodCount, location: location, image: imageData) {
                         NotificationCenter.default.post(name: NSNotification.Name.DataDidUpdate, object: nil)
                     }
                     dismiss(animated: false, completion: nil)
+                } else {
+                    DataManager.shared.createFood(name: name, date: date, count: foodCount, location: location) {
+                        NotificationCenter.default.post(name: NSNotification.Name.DataDidUpdate, object: nil)
+                        self.dismiss(animated: false, completion: nil)
+                    }
                 }
             }
         }
@@ -141,4 +149,20 @@ extension AddFoodViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
+}
+
+// protocol to recieve image data from CameraViewController
+protocol isAbleToRecieveData {
+    func passData(data: Data)
+}
+
+extension AddFoodViewController: isAbleToRecieveData {
+    func passData(data: Data) {
+        
+        imageData = data
+        foodImageView.contentMode = .scaleAspectFill
+        foodImageView.image = UIImage(data: data)
+
+    }
+
 }

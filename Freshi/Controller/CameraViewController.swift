@@ -13,6 +13,7 @@ class CameraViewController: UIViewController {
     let captureSession = AVCaptureSession()
     let photoOutput = AVCapturePhotoOutput()
     let sessionQueue = DispatchQueue(label: "session Queue")
+    var delegate: isAbleToRecieveData!
     
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var captureBtn: UIButton!
@@ -112,6 +113,19 @@ class CameraViewController: UIViewController {
         }
     }
 
+    @IBAction func capturePhoto(_ sender: Any) {
+        let videoPreviewLayerOrientation = self.previewView.videoPreviewLayer.connection?.videoOrientation
+        sessionQueue.async {
+            
+            // set device video orientation
+            let connection = self.photoOutput.connection(with: .video)
+            connection?.videoOrientation = videoPreviewLayerOrientation!
+            
+            // capture photo
+            let settings = AVCapturePhotoSettings()
+            self.photoOutput.capturePhoto(with: settings, delegate: self)
+        }
+    }
     
     @IBAction func closeCamera(_ sender: Any) {
         stopSession()
@@ -120,5 +134,15 @@ class CameraViewController: UIViewController {
     
     deinit {
         print("deinit")
+    }
+}
+
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        
+        guard let photoData = photo.fileDataRepresentation() else { return }
+        delegate.passData(data: photoData)
+        dismiss(animated: true, completion: nil)
+
     }
 }

@@ -17,11 +17,12 @@ class ModifyFoodViewController: UIViewController {
     @IBOutlet weak var freezerBtn: UIButton!
     @IBOutlet weak var otherBtn: UIButton!
 
+    @IBOutlet weak var foodImageView: UIImageView!
     
     var modifyFood: FoodEntity?
     
+    var imageData: Data?
     var foodCount = 0
-    var imageRegistered = false
     var location = 0
     
     let datePicker = UIDatePicker()
@@ -34,6 +35,8 @@ class ModifyFoodViewController: UIViewController {
         view.backgroundColor = UIColor(displayP3Red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
         createDatePicker()
         setFoodData()
+        foodImageView.layer.cornerRadius = 5
+        foodImageView.layer.masksToBounds = true
     }
     
     
@@ -113,9 +116,11 @@ class ModifyFoodViewController: UIViewController {
             
             // set image
             if let image = foodData.image {
+                imageData = image
+                foodImageView.contentMode = .scaleAspectFill
+                foodImageView.image = UIImage(data: image)
                 
             } else {
-                imageRegistered = false
                 print("no image")
             }
         }
@@ -149,6 +154,14 @@ class ModifyFoodViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func addPhoto(_ sender: Any) {
+        let cameraVC = storyboard?.instantiateViewController(identifier: "CameraViewController") as! CameraViewController
+        cameraVC.delegate = self
+        cameraVC.modalPresentationStyle = .fullScreen
+        present(cameraVC, animated: true, completion: nil)
+    }
+    
     // set count of food
     @IBAction func plusCount(_ sender: Any) {
         foodCount += 1
@@ -165,8 +178,11 @@ class ModifyFoodViewController: UIViewController {
     @IBAction func modifyBtnToggled(_ sender: Any) {
         if let name = nameTextField.text, let date = expireDateTextField.text , let foodData = modifyFood {
             if !name.isEmpty, !date.isEmpty {
-                if imageRegistered {
-                    
+                if let imageData = imageData {
+                    DataManager.shared.updateFood(entity: foodData, name: name, date: date, count: foodCount, location: location, image: imageData) {
+                        NotificationCenter.default.post(name: NSNotification.Name.DataDidUpdate, object: nil)
+                        self.dismiss(animated: false, completion: nil)
+                    }
                 } else {
                     
                     DataManager.shared.updateFood(entity: foodData, name: name, date: date, count: foodCount, location: location) {
@@ -199,4 +215,15 @@ extension ModifyFoodViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
+}
+
+extension ModifyFoodViewController: isAbleToRecieveData {
+    func passData(data: Data) {
+        
+        imageData = data
+        foodImageView.contentMode = .scaleAspectFill
+        foodImageView.image = UIImage(data: data)
+
+    }
+
 }
