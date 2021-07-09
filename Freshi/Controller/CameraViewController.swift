@@ -15,15 +15,27 @@ class CameraViewController: UIViewController {
     let sessionQueue = DispatchQueue(label: "session Queue")
     
     @IBOutlet weak var previewView: PreviewView!
+    @IBOutlet weak var captureBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupUI()
         previewView.session = captureSession
         checkCameraPermissions()
     }
     
+    
+    func setupUI() {
+        captureBtn.layer.borderColor = captureBtn.layer.backgroundColor
+        captureBtn.layer.borderWidth = 8
+        captureBtn.layer.backgroundColor = UIColor.white.cgColor
+        captureBtn.layer.cornerRadius = captureBtn.bounds.height/2
+        captureBtn.layer.masksToBounds = true
+        
+
+    }
 
     func checkCameraPermissions() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
@@ -48,6 +60,7 @@ class CameraViewController: UIViewController {
             break
         }
     }
+    
     
     func setupSession() {
         captureSession.sessionPreset = .photo
@@ -99,4 +112,13 @@ class CameraViewController: UIViewController {
         }
     }
 
+    
+    @IBAction func closeCamera(_ sender: Any) {
+        stopSession()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    deinit {
+        print("deinit")
+    }
 }
