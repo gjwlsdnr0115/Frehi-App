@@ -99,19 +99,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHL-si-Z5c">
                                 <rect key="frame" x="58.333333333333336" y="276" width="5" height="17"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="textColor" red="0.066666666666666666" green="0.82745098039215681" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="만료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTo-ME-LVX">
-                                <rect key="frame" x="77.333333333333329" y="276" width="24.333333333333329" height="17"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xy0-Vu-OSh">
-                                <rect key="frame" x="106.66666666666667" y="276" width="5" height="17"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="textColor" red="1" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.69019607839999997" green="0.57647058819999997" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i4e-qf-hge">
@@ -212,20 +200,16 @@
                             <constraint firstItem="V7p-2N-LBu" firstAttribute="top" secondItem="Nmq-S3-p7r" secondAttribute="bottom" constant="2" id="Jad-hc-0ML"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i4e-qf-hge" secondAttribute="trailing" constant="20" id="JnA-wY-eGo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8sh-DA-cae" secondAttribute="trailing" constant="40" id="PYj-cW-vgz"/>
-                            <constraint firstItem="Xy0-Vu-OSh" firstAttribute="centerY" secondItem="eTo-ME-LVX" secondAttribute="centerY" id="T0b-A9-xxS"/>
                             <constraint firstItem="FSg-yk-bYE" firstAttribute="top" secondItem="8sh-DA-cae" secondAttribute="bottom" constant="15" id="THV-a5-496"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i4e-qf-hge" secondAttribute="bottom" id="TmJ-3R-nkH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uto-uR-hYV" secondAttribute="trailing" constant="20" id="UId-Xj-sUE"/>
                             <constraint firstItem="8sh-DA-cae" firstAttribute="top" secondItem="u42-9E-4XS" secondAttribute="bottom" constant="10" id="VSJ-cM-GHr"/>
-                            <constraint firstItem="eTo-ME-LVX" firstAttribute="leading" secondItem="FSg-yk-bYE" secondAttribute="trailing" constant="24" id="Vie-OJ-Vfa"/>
-                            <constraint firstItem="Xy0-Vu-OSh" firstAttribute="leading" secondItem="eTo-ME-LVX" secondAttribute="trailing" constant="5" id="WrF-Z4-hKA"/>
                             <constraint firstItem="jWe-T2-rnf" firstAttribute="leading" secondItem="V7p-2N-LBu" secondAttribute="trailing" id="b3n-DV-ecD"/>
                             <constraint firstItem="nHL-si-Z5c" firstAttribute="leading" secondItem="FSg-yk-bYE" secondAttribute="trailing" constant="5" id="cpx-oO-ayy"/>
                             <constraint firstItem="Nmq-S3-p7r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dDw-G3-DJe"/>
                             <constraint firstItem="8sh-DA-cae" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="dHy-TR-UkA"/>
                             <constraint firstItem="ErB-1b-Wqe" firstAttribute="centerY" secondItem="FSg-yk-bYE" secondAttribute="centerY" id="e6Y-wk-3aO"/>
                             <constraint firstItem="nHL-si-Z5c" firstAttribute="centerY" secondItem="FSg-yk-bYE" secondAttribute="centerY" id="elg-h8-R3n"/>
-                            <constraint firstItem="eTo-ME-LVX" firstAttribute="centerY" secondItem="FSg-yk-bYE" secondAttribute="centerY" id="fF4-Wt-jeW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ErB-1b-Wqe" secondAttribute="trailing" constant="20" id="fhl-zY-4EY"/>
                             <constraint firstItem="i4e-qf-hge" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fqW-Tt-RMe"/>
                             <constraint firstItem="Uto-uR-hYV" firstAttribute="centerY" secondItem="Nmq-S3-p7r" secondAttribute="centerY" id="hWY-t9-cWk"/>
@@ -237,6 +221,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="foodCountLabel" destination="nHL-si-Z5c" id="Hmi-0V-FGA"/>
                         <outlet property="foodInfoTableView" destination="i4e-qf-hge" id="BhF-2e-fLC"/>
                         <outlet property="foodSearchBar" destination="u42-9E-4XS" id="v7z-ng-HMn"/>
                         <outlet property="freezerBtn" destination="Ot9-KX-5zB" id="l26-rB-2ny"/>

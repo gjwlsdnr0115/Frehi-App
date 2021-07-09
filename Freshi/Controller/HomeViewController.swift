@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var foodSearchBar: UISearchBar!
     
+    @IBOutlet weak var foodCountLabel: UILabel!
     
     @IBOutlet weak var totalBtn: UIButton!
     @IBOutlet weak var fridgeBtn: UIButton!
@@ -34,7 +35,10 @@ class HomeViewController: UIViewController {
     let greenColor = UIColor(displayP3Red: 17/255.0, green: 211/255.0, blue: 36/255.0, alpha: 1.0)
     let redColor = UIColor(displayP3Red: 255/255.0, green: 77/255.0, blue: 77/255.0, alpha: 1.0)
     let yellowColor = UIColor(displayP3Red: 255/255.0, green: 236/255.0, blue: 88/255.0, alpha: 1.0)
-
+    let color1 = UIColor(displayP3Red: 176/255.0, green: 147/255.0, blue: 248/255.0, alpha: 1.0)
+    let color2 = UIColor(displayP3Red: 132/255.0, green: 231/255.0, blue: 217/255.0, alpha: 1.0)
+    let color3 = UIColor(displayP3Red: 160/255.0, green: 203/255.0, blue: 247/255.0, alpha: 1.0)
+    let color4 = UIColor(displayP3Red: 213/255.0, green: 213/255.0, blue: 213/255.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,10 +74,22 @@ class HomeViewController: UIViewController {
     // fetch data
     func reloadData(location: Int) {
         
-        if location == 3 {  // show all food
-            foodData = DataManager.shared.fetchFood()
-        } else {  // show food by location
+        switch location {
+        case 0:
+            foodCountLabel.textColor = color2
             foodData = DataManager.shared.fetchFoodByLocation(location: location)
+        case 1:
+            foodCountLabel.textColor = color3
+            foodData = DataManager.shared.fetchFoodByLocation(location: location)
+        case 2:
+            foodCountLabel.textColor = color4
+            foodData = DataManager.shared.fetchFoodByLocation(location: location)
+        case 3:
+            foodData = DataManager.shared.fetchFood()
+            foodCountLabel.textColor = color1
+        default:
+            foodData = DataManager.shared.fetchFood()
+            foodCountLabel.textColor = color1
         }
         
         // sort food in order of remaining days
@@ -87,6 +103,7 @@ class HomeViewController: UIViewController {
         
         foodSearchBar.text = ""
         filteredFoodData = foodData
+        foodCountLabel.text = "\(filteredFoodData.count)"
     }
     
     
