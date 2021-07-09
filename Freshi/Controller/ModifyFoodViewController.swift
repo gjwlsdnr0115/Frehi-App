@@ -31,6 +31,8 @@ class ModifyFoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
         nameTextField.delegate = self
         view.backgroundColor = UIColor(displayP3Red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
         createDatePicker()

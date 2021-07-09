@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        overrideUserInterfaceStyle = .light
         // set tableView UI
         foodInfoTableView.backgroundColor = UIColor.white
         foodInfoTableView.tableFooterView = UIView(frame: .zero)
