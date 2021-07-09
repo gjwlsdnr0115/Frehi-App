@@ -464,9 +464,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6K-9u-d4R">
-                                <rect key="frame" x="172" y="739" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6K-9u-d4R">
+                                <rect key="frame" x="143" y="731.66666666666663" width="104.33333333333331" height="37.333333333333371"/>
+                                <state key="normal" image="add"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fbK-Oo-zss"/>
