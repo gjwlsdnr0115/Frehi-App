@@ -41,6 +41,43 @@ extension DataManager {
         return list
     }
     
+    func fetchFoodByLocation(location: Int) -> [FoodEntity] {
+        var list = [FoodEntity]()
+        mainContext.performAndWait {
+            let request: NSFetchRequest<FoodEntity> = FoodEntity.fetchRequest()
+            let predicate = NSPredicate(format: "location == \(location)")
+            request.predicate = predicate
+            
+            do {
+                list = try mainContext.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+        return list
+    }
+    
+    func fetchFoodBySearch(location: Int, search: String) -> [FoodEntity] {
+        var list = [FoodEntity]()
+        mainContext.performAndWait {
+            let request: NSFetchRequest<FoodEntity> = FoodEntity.fetchRequest()
+            let locationPredicate = NSPredicate(format: "location == \(location)")
+            let searchPredicate = NSPredicate(format: "name CONTAINS[cd] %@", search)
+            let predicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [locationPredicate, searchPredicate])
+            request.predicate = predicate
+            
+            do {
+                list = try mainContext.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+        return list
+    }
+    
+    
     func updateFood(entity: FoodEntity, name: String? = nil, date: String? = nil, count: Int? = nil, location: Int? = nil, image: Data? = nil, completion: (() -> ())? = nil) {
         mainContext.perform {
             

@@ -49,21 +49,37 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8sh-DA-cae">
                                 <rect key="frame" x="40" y="244.99999999999997" width="310" height="30.666666666666657"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ig-ld-Khl">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ig-ld-Khl">
                                         <rect key="frame" x="0.0" y="0.0" width="77.666666666666671" height="30.666666666666668"/>
-                                        <state key="normal" image="total_fill"/>
+                                        <state key="normal" image="total"/>
+                                        <state key="selected" image="total_fill"/>
+                                        <connections>
+                                            <action selector="totalBtnToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aWl-kg-hXN"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJb-zZ-4r1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJb-zZ-4r1">
                                         <rect key="frame" x="77.666666666666686" y="0.0" width="77.333333333333314" height="30.666666666666668"/>
                                         <state key="normal" image="fridge"/>
+                                        <state key="selected" image="fridge_fill"/>
+                                        <connections>
+                                            <action selector="fridgeBtntoggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3tu-NV-B3Y"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-KX-5zB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-KX-5zB">
                                         <rect key="frame" x="155" y="0.0" width="77.666666666666686" height="30.666666666666668"/>
                                         <state key="normal" image="freezer"/>
+                                        <state key="selected" image="freezer_fill"/>
+                                        <connections>
+                                            <action selector="freezerBtnToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nBT-pD-1L9"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJQ-HJ-34N">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJQ-HJ-34N">
                                         <rect key="frame" x="232.66666666666671" y="0.0" width="77.333333333333343" height="30.666666666666668"/>
                                         <state key="normal" image="other"/>
+                                        <state key="selected" image="other_fill"/>
+                                        <connections>
+                                            <action selector="otherBtnToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91Z-IZ-0Ws"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -103,7 +119,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodInfoCell" id="bSO-TR-Nbr" customClass="FoodInfoCell" customModule="Freshi" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoodInfoCell" id="bSO-TR-Nbr" customClass="FoodInfoCell" customModule="Freshi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.333333969116211" width="350" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bSO-TR-Nbr" id="iSD-In-Qos">
@@ -223,6 +239,10 @@
                     <connections>
                         <outlet property="foodInfoTableView" destination="i4e-qf-hge" id="BhF-2e-fLC"/>
                         <outlet property="foodSearchBar" destination="u42-9E-4XS" id="v7z-ng-HMn"/>
+                        <outlet property="freezerBtn" destination="Ot9-KX-5zB" id="l26-rB-2ny"/>
+                        <outlet property="fridgeBtn" destination="JJb-zZ-4r1" id="eJs-Bo-Uy9"/>
+                        <outlet property="otherBtn" destination="FJQ-HJ-34N" id="0wd-3U-7TH"/>
+                        <outlet property="totalBtn" destination="9ig-ld-Khl" id="LzY-aM-BQR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -641,6 +661,7 @@
         <image name="other" width="55.666667938232422" height="30.666666030883789"/>
         <image name="other_fill" width="55.666667938232422" height="30.666666030883789"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="total" width="55.666667938232422" height="30.666666030883789"/>
         <image name="total_fill" width="55.666667938232422" height="30.666666030883789"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
