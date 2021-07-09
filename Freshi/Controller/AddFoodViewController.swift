@@ -37,12 +37,14 @@ class AddFoodViewController: UIViewController {
         expireDateTextField.textAlignment = .center
         
         // toolbar
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
+        let toolbar = UIToolbar(frame:CGRect(x:0, y:0, width:100, height:44))
+        let flexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         
         // Done button
         let doneBtn = UIBarButtonItem(title: "완료", style: .done, target: nil, action: #selector(doneToggled))
-        toolbar.setItems([doneBtn], animated: true)
+        
+        toolbar.items = [flexibleButton, doneBtn]
+        toolbar.sizeToFit()
         
         // assign toolbar to textField
         expireDateTextField.inputAccessoryView = toolbar
