@@ -66,6 +66,14 @@ class AddFoodViewController: UIViewController {
     }
     
     
+    
+    @IBAction func addPhoto(_ sender: Any) {
+        let cameraVC = storyboard?.instantiateViewController(identifier: "CameraViewController") as! CameraViewController
+        cameraVC.modalPresentationStyle = .fullScreen
+        present(cameraVC, animated: true, completion: nil)
+    }
+    
+    
     // set location of food
     @IBAction func fridgeToggled(_ sender: Any) {
         if location != 0 {

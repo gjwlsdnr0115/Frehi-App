@@ -386,6 +386,12 @@
                                             <action selector="cancel:" destination="dG9-89-abh" eventType="touchUpInside" id="X2n-jC-re6"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qc-4L-qlT">
+                                        <rect key="frame" x="90" y="95.666666666666686" width="120" height="120"/>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="dG9-89-abh" eventType="touchUpInside" id="Dhq-b0-tfh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -395,7 +401,9 @@
                                     <constraint firstAttribute="bottom" secondItem="Ova-uk-Ak9" secondAttribute="bottom" constant="20" id="4z0-8l-Q0q"/>
                                     <constraint firstAttribute="trailing" secondItem="DNC-Zn-rmd" secondAttribute="trailing" constant="30" id="7op-cN-qa6"/>
                                     <constraint firstItem="KfJ-5y-dCf" firstAttribute="leading" secondItem="zar-Cw-pde" secondAttribute="leading" constant="30" id="7uR-fD-bhD"/>
+                                    <constraint firstItem="9qc-4L-qlT" firstAttribute="top" secondItem="OT1-n2-oAJ" secondAttribute="top" id="8hx-Rz-Hy3"/>
                                     <constraint firstItem="bvQ-2v-7jv" firstAttribute="top" secondItem="OT1-n2-oAJ" secondAttribute="bottom" constant="10" id="AYd-SN-obK"/>
+                                    <constraint firstItem="9qc-4L-qlT" firstAttribute="bottom" secondItem="OT1-n2-oAJ" secondAttribute="bottom" id="Dvw-lj-eNm"/>
                                     <constraint firstItem="U1R-cR-SCc" firstAttribute="leading" secondItem="KfJ-5y-dCf" secondAttribute="trailing" constant="30" id="HAc-by-wmT"/>
                                     <constraint firstItem="ucl-Fg-KeS" firstAttribute="leading" secondItem="zar-Cw-pde" secondAttribute="leading" constant="30" id="IBD-AG-cE0"/>
                                     <constraint firstItem="RCm-7v-vLs" firstAttribute="centerY" secondItem="ucl-Fg-KeS" secondAttribute="centerY" id="IcT-Eq-l7n"/>
@@ -412,6 +420,7 @@
                                     <constraint firstAttribute="height" constant="440" id="ezT-Fu-TpE"/>
                                     <constraint firstItem="RRV-3I-Hce" firstAttribute="leading" secondItem="bvQ-2v-7jv" secondAttribute="trailing" constant="2" id="f6M-Ad-oty"/>
                                     <constraint firstItem="OT1-n2-oAJ" firstAttribute="centerX" secondItem="zar-Cw-pde" secondAttribute="centerX" id="hoE-55-4FM"/>
+                                    <constraint firstItem="9qc-4L-qlT" firstAttribute="leading" secondItem="OT1-n2-oAJ" secondAttribute="leading" id="iQL-fh-VN8"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="bvQ-2v-7jv" secondAttribute="trailing" constant="245.66999999999999" id="kAO-J7-TbP"/>
                                     <constraint firstItem="fpr-5K-F22" firstAttribute="leading" secondItem="zar-Cw-pde" secondAttribute="leading" constant="15" id="kwN-HY-7H8"/>
                                     <constraint firstItem="fpr-5K-F22" firstAttribute="top" secondItem="zar-Cw-pde" secondAttribute="top" constant="15" id="n3n-4f-kzC"/>
@@ -419,6 +428,7 @@
                                     <constraint firstItem="OAO-9j-mQj" firstAttribute="centerX" secondItem="zar-Cw-pde" secondAttribute="centerX" id="p2u-mV-kxY"/>
                                     <constraint firstItem="RCm-7v-vLs" firstAttribute="leading" secondItem="zar-Cw-pde" secondAttribute="leading" constant="180" id="pS7-wC-qUp"/>
                                     <constraint firstItem="oCV-vS-7lZ" firstAttribute="centerY" secondItem="ucl-Fg-KeS" secondAttribute="centerY" id="trS-BH-4ng"/>
+                                    <constraint firstItem="9qc-4L-qlT" firstAttribute="trailing" secondItem="OT1-n2-oAJ" secondAttribute="trailing" id="udM-dh-9yc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -441,6 +451,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LjL-r7-Vdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1034" y="119"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="q1h-I6-wOZ">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="Y8J-yz-2oE" customClass="CameraViewController" customModule="Freshi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bHH-bi-8Tl">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNR-ef-Mrv" customClass="PreviewView" customModule="Freshi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6K-9u-d4R">
+                                <rect key="frame" x="172" y="739" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fbK-Oo-zss"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YNR-ef-Mrv" firstAttribute="leading" secondItem="fbK-Oo-zss" secondAttribute="leading" id="Dsz-Ug-BXg"/>
+                            <constraint firstItem="fbK-Oo-zss" firstAttribute="bottom" secondItem="w6K-9u-d4R" secondAttribute="bottom" constant="41" id="RiJ-f7-oBB"/>
+                            <constraint firstItem="fbK-Oo-zss" firstAttribute="trailing" secondItem="YNR-ef-Mrv" secondAttribute="trailing" id="VJZ-Pk-hQc"/>
+                            <constraint firstAttribute="bottom" secondItem="YNR-ef-Mrv" secondAttribute="bottom" id="hbH-QW-Zi5"/>
+                            <constraint firstItem="YNR-ef-Mrv" firstAttribute="top" secondItem="bHH-bi-8Tl" secondAttribute="top" id="sK1-3j-hmo"/>
+                            <constraint firstItem="w6K-9u-d4R" firstAttribute="centerX" secondItem="bHH-bi-8Tl" secondAttribute="centerX" id="zzw-wd-Zyn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="YNR-ef-Mrv" id="3iT-zE-HDe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s5z-nN-nzy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5384615384614" y="118.72037914691943"/>
         </scene>
         <!--Modify Food View Controller-->
         <scene sceneID="ewR-4B-rWA">
