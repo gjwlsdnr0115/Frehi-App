@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         DataManager.shared.setup(modelName: "DataModel")
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [UNAuthorizationOptions.alert, UNAuthorizationOptions.sound]) { granted, error in
+            if granted {
+                UNUserNotificationCenter.current().delegate = self
+            }
+        }
+        
         
         return true
     }
@@ -34,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+}
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
 }
 
