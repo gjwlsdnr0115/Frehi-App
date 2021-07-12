@@ -8,6 +8,11 @@
 import UIKit
 import UserNotifications
 
+let initialLaunchKey = "initialLaunchKey"
+let notificationIdentifier = "dailyNotification"
+
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,6 +27,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if granted {
                 UNUserNotificationCenter.current().delegate = self
             }
+        }
+        
+        if !UserDefaults.standard.bool(forKey: initialLaunchKey) {
+            
+            
+            // set notification
+            var dateComponents = DateComponents()
+            dateComponents.hour = 19
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            
+            let content = UNMutableNotificationContent()
+            content.title = "냉장고 확인"
+            content.body = "냉장고 음식들의 유통기한을 확인하세요!"
+            
+            let request = UNNotificationRequest(identifier: notificationIdentifier, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request) { (error) in
+                print("eError in adding notification")
+            }
+            
+            
+            UserDefaults.standard.set(true, forKey: initialLaunchKey)
         }
         
         
