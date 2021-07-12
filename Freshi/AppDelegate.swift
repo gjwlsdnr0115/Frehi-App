@@ -9,6 +9,9 @@ import UIKit
 import UserNotifications
 
 let initialLaunchKey = "initialLaunchKey"
+let notificicationEnabledKey = "notificicationEnabledKey"
+
+
 let notificationIdentifier = "dailyNotification"
 
 
@@ -43,11 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let request = UNNotificationRequest(identifier: notificationIdentifier, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request) { (error) in
-                print("eError in adding notification")
+                print("Error in adding notification")
             }
             
             
             UserDefaults.standard.set(true, forKey: initialLaunchKey)
+            UserDefaults.standard.set(true, forKey: notificicationEnabledKey)
         }
         
         

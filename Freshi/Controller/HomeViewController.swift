@@ -107,6 +107,8 @@ class HomeViewController: UIViewController {
         foodCountLabel.text = "\(filteredFoodData.count)"
     }
     
+    @IBAction func presentSettings(_ sender: Any) {
+    }
     
     // show all food data
     @IBAction func totalBtnToggled(_ sender: Any) {
