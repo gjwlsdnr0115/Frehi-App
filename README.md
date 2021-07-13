@@ -6,17 +6,17 @@
     </p>
 </div>
 
-* [Introduction](https://github.com/gjwlsdnr0115/Frehi-App#Introduction)
+* [Introduction](https://github.com/gjwlsdnr0115/Freshi-App#Introduction)
 
-* [Overview](https://github.com/gjwlsdnr0115/Frehi-App#Overview)
+* [Overview](https://github.com/gjwlsdnr0115/Freshi-App#Overview)
   * Overall display
-* [App](https://github.com/gjwlsdnr0115/Frehi-App#App)
+* [App](https://github.com/gjwlsdnr0115/Freshi-App#App)
 
   * Home Screen
   * Add/Update Food Screen
   * Camera Screen
 
-* [Distribution](https://github.com/gjwlsdnr0115/Frehi-App#Distribution)
+* [Distribution](https://github.com/gjwlsdnr0115/Freshi-App#Distribution)
 
 
 # Introduction
