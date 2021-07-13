@@ -1,5 +1,4 @@
-# Frehi-App
-# Turtlely: Neck Posture Care App
+# Freshi: Expire date Manager
 
 <div>
     <p align = "center">
