@@ -2,7 +2,7 @@
 
 <div>
     <p align = "center">
-	<img width = "300" src = "https://user-images.githubusercontent.com/61009055/120614536-4cf00600-c492-11eb-804a-f5eda3164aeb.png">
+	<img width = "300" src = "https://user-images.githubusercontent.com/61009055/125378843-6c038100-e3ca-11eb-9d73-123ceca583e3.png">
     </p>
 </div>
 
