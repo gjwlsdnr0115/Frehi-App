@@ -30,9 +30,9 @@ Organizing the expire dates of food supplies can be a difficult task. 'Freshi' i
 
 <div>
     <p align = "center">
-	<img width = "150" src = "https://user-images.githubusercontent.com/61009055/120617639-44e59580-c495-11eb-9258-d544b7f74404.png">
-  <img width = "150" src = "https://user-images.githubusercontent.com/61009055/120617659-4a42e000-c495-11eb-838e-47018fbd0594.png">
-  <img width = "150" src = "https://user-images.githubusercontent.com/61009055/120617666-4c0ca380-c495-11eb-8d41-cb5f511d9cff.png">
+	<img width = "150" src = "https://user-images.githubusercontent.com/61009055/125378327-812be000-e3c9-11eb-8c32-83ee9c1fdfbc.png">
+  <img width = "150" src = "https://user-images.githubusercontent.com/61009055/125378378-96087380-e3c9-11eb-8508-2715c7e87ee0.png">
+  <img width = "150" src = "https://user-images.githubusercontent.com/61009055/125378384-999bfa80-e3c9-11eb-8309-76b7deea37d7.png">
     </p>
 </div>
 
