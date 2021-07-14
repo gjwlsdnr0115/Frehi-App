@@ -63,3 +63,5 @@ Organizing the expire dates of food supplies can be a difficult task. 'Freshi' i
   - Takes photo of user's food supply
 
 # Distribution
+
+[Download in App Store](https://apps.apple.com/kr/app/%ED%94%84%EB%A0%88%EC%8B%9C-%EB%83%89%EC%9E%A5%EA%B3%A0-%EA%B4%80%EB%A6%AC-%EC%95%B1/id1576215603)
